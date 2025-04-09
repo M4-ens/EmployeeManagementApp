@@ -16,63 +16,57 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Login'),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back, color: Colors.cyanAccent),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.account_circle,
-              color: Colors.cyanAccent,
-            ), // User account icon
-            iconSize: 40,
-            onPressed: () {
-              print("User account icon tapped");
-            },
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   title: Text('Login',style: TextStyle(fontWeight: FontWeight.bold)),
+      // ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: _idController,
-              decoration: buildInputDecoration(
-                label: 'Employee Id',
-              ).copyWith(prefixIcon: Icon(Icons.people, color: Colors.cyan)),
-            ),
-            SizedBox(height: 16),
-            TextField(
-              controller: _passwordController,
-              obscureText: !_isVisible,
-              decoration: buildInputDecoration(label: 'Password').copyWith(
-                prefixIcon: Icon(Icons.lock, color: Colors.cyan),
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      _isVisible = !_isVisible;
-                    });
-                  },
-                  icon: Icon(
-                    _isVisible ? Icons.visibility : Icons.visibility_off,
-                    color: Colors.cyan,
-                  ),
-                ),
+            Text('Login',style: TextStyle(color: Color(0xff6A0DAD),fontSize: 30,fontWeight: FontWeight.bold)),
+            SizedBox(height:24 ,),
+            Container(
+              decoration: BoxDecoration(
+                color: Color(0xffC8A2C8)
               ),
-            ),
-            SizedBox(height: 24),
-            ElevatedButton.icon(
-              onPressed: () => _validateCredentials(context),
-              icon: Icon(Icons.login, color: Colors.cyanAccent),
-              label: Text('Login'),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextField(
+                    controller: _idController,
+                    decoration: buildInputDecoration(
+                      label: 'Employee Id',
+                    ).copyWith(prefixIcon: Icon(Icons.people, color: Color(0xff3D004D))),
+                  ),
+                  SizedBox(height: 16),
+                  TextField(
+                    controller: _passwordController,
+                    obscureText: !_isVisible,
+                    decoration: buildInputDecoration(label: 'Password').copyWith(
+                      prefixIcon: Icon(Icons.lock, color: Color(0xff3D004D)),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _isVisible = !_isVisible;
+                          });
+                        },
+                        icon: Icon(
+                          _isVisible ? Icons.visibility : Icons.visibility_off,
+                          color: Color(0xff3D004D),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 24),
+                  ElevatedButton.icon(
+                    onPressed: () => _validateCredentials(context),
+                    icon: Icon(Icons.login, color: Color(0xff3D004D)),
+                    label: Text('Login'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -83,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
   InputDecoration buildInputDecoration({String? label}) {
     return InputDecoration(
       labelText: label,
-      labelStyle: TextStyle(color: Colors.cyan),
+      labelStyle: TextStyle(color: Color(0xffE6E6FA)),
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
@@ -94,6 +88,8 @@ class _LoginScreenState extends State<LoginScreen> {
         borderRadius: BorderRadius.circular(16),
         borderSide: BorderSide(width: 2, color: Colors.deepPurpleAccent),
       ),
+      filled: true,
+      fillColor: Color(0xffC8A2C8),
     );
   }
 

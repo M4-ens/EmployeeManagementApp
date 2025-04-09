@@ -1,8 +1,10 @@
 import 'package:employee_management/screens/add_emp_screen.dart';
 import 'package:employee_management/screens/delete_emp_screen.dart';
+import 'package:employee_management/screens/first_screen.dart';
 import 'package:employee_management/screens/login_screen.dart';
 import 'package:employee_management/screens/menu_screen.dart';
 import 'package:employee_management/screens/modify_emp_screen.dart';
+import 'package:employee_management/screens/view_emp_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -20,19 +22,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.blue[800],
-        scaffoldBackgroundColor: Colors.blue[50],  
+        scaffoldBackgroundColor: Color(0xffE6E6FA),  
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blue[800],
-          foregroundColor: Colors.white,
+          backgroundColor: Color(0xffE6E6FA),
+          foregroundColor:  Color(0xff6A0DAD),
           ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue[800], 
+            backgroundColor: Color(0xff9966A3), 
             foregroundColor: Colors.white,    
           ),
         ),
       ),
-      home: ModifyEmpScreen(),
+      home: LoginScreen(),
     );
   }
 }

@@ -18,21 +18,18 @@ class _AddEmpScreenState extends State<AddEmpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Add New Employee'),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.cyanAccent),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   title: Text('Add New Employee',style: TextStyle(fontWeight: FontWeight.bold)),
+      // ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text('Add New Employee',style: TextStyle(color: Color(0xff6A0DAD),fontSize: 30,fontWeight: FontWeight.bold)),
+              SizedBox(height:24 ,),
               TextField(
                 controller: _nameController,
                 decoration: buildInputDecoration(label: 'Name'),
@@ -66,7 +63,7 @@ class _AddEmpScreenState extends State<AddEmpScreen> {
               TextField(
                 controller: _dateController,
                 readOnly: true,
-                decoration: buildInputDecoration(label: 'Date').copyWith(
+                decoration: buildInputDecoration(label: 'Date of joining').copyWith(
                   prefixIcon: Icon(Icons.calendar_today, color: Colors.cyan),
                 ),
                 onTap: () {

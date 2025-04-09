@@ -10,21 +10,17 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Employee Management System'),
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            print("pressed");
-          },
-          icon: Icon(Icons.menu, color: Colors.cyanAccent),
-        ),
-      ),
+      // appBar: AppBar(
+      //   title: Text('Employee Management System',style: TextStyle(fontWeight: FontWeight.bold),),
+      //   centerTitle: true,
+      // ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-              ElevatedButton(
+            Text('Add New Employee',style: TextStyle(color: Color(0xff6A0DAD),fontSize: 30,fontWeight: FontWeight.bold)),
+            SizedBox(height:24 ,),
+            ElevatedButton(
               style: ElevatedButton.styleFrom(minimumSize: Size(210, 50)),
               onPressed: () {
                 Navigator.push(
@@ -35,7 +31,7 @@ class MenuScreen extends StatelessWidget {
               child: Text('Add Employee'),
             ),
             SizedBox(height: 16),
-             ElevatedButton(
+            ElevatedButton(
               style: ElevatedButton.styleFrom(minimumSize: Size(210, 50)),
               onPressed: () {
                 Navigator.push(
@@ -43,7 +39,7 @@ class MenuScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => ViewEmpScreen()),
                 );
               },
-              child: Text('Employee Details'),
+              child: Text('View Employee Details'),
             ),
             SizedBox(height: 16),
             ElevatedButton(

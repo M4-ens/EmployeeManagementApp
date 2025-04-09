@@ -19,32 +19,16 @@ class _ModifyEmpScreenState extends State<ModifyEmpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Modify Employee Details'),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back, color: Colors.cyanAccent),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.account_circle,
-              color: Colors.cyanAccent,
-            ), // User account icon
-            iconSize: 40,
-            onPressed: () {
-              print("User account icon tapped");
-            },
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   title: Text('Modify Employee Details',style: TextStyle(fontWeight: FontWeight.bold)),
+      // ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            Text('Modify Employee Details',style: TextStyle(color: Color(0xff6A0DAD),fontSize: 30,fontWeight: FontWeight.bold)),
+            SizedBox(height:24 ,),
             TextField(
               controller: _idController,
               decoration: buildInputDecoration(label: 'Enter Employee ID'),
@@ -106,14 +90,33 @@ class _ModifyEmpScreenState extends State<ModifyEmpScreen> {
               decoration: buildInputDecoration(label: 'Salary'),
             ),
             SizedBox(height: 24),
-            ElevatedButton.icon(
-              onPressed: () {
-                setState(() {
-                  _saveChanges();
-                });
-              },
-              icon: Icon(Icons.save, color: Colors.cyanAccent),
-              label: Text('Save Changes'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _saveChanges();
+                    });
+                  },
+                  icon: Icon(Icons.save, color: Colors.cyanAccent),
+                  label: Text('Save Changes'),
+                ),
+                SizedBox(width: 16),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _idController.clear();
+                      _nameController.clear();
+                      _selectedDepartment = null;
+                      _dateController.clear();
+                      _salaryController.clear();
+                    });
+                  },
+                  icon: Icon(Icons.delete, color: Colors.cyanAccent),
+                  label: Text('Cancel'),
+                ),
+              ],
             ),
           ],
         ),
