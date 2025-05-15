@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "718723788724",
+    "project_id": "jp-food-3c9ed",
+    "storage_bucket": "jp-food-3c9ed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718723788724:android:a50cb14db08c60a5664ce1",
+        "android_client_info": {
+          "package_name": "com.example.emp_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_bTEloNa3Ug4QvC_Fqpz8EarVD2pfvHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
