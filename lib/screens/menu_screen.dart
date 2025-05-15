@@ -83,35 +83,41 @@ class _MenuScreenState extends State<MenuScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.purple[100],
-          backgroundColor: Color(0xff3D004D),
-          currentIndex: _index,
-          onTap: (int index) {
-            setState(() {
-              _index = index;
-            });
-            if (index == 0) {
-              HapticFeedback.vibrate();
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MenuScreen()),
-              );
-            }
-            if (index == 1) {
-              HapticFeedback.vibrate();
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),
-              );
-            }
-          },
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
-            BottomNavigationBarItem(icon: Icon(Icons.logout), label: 'Logout'),
-          ],
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(8.0),
+          topRight: Radius.circular(8.0),
         ),
+        child: BottomNavigationBar(
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.purple[100],
+            backgroundColor: Color(0xff3D004D),
+            currentIndex: _index,
+            onTap: (int index) {
+              setState(() {
+                _index = index;
+              });
+              if (index == 0) {
+                HapticFeedback.vibrate();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MenuScreen()),
+                );
+              }
+              if (index == 1) {
+                HapticFeedback.vibrate();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              }
+            },
+            items: [
+              BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
+              BottomNavigationBarItem(icon: Icon(Icons.logout), label: 'Logout'),
+            ],
+          ),
+      ),
     );
   }
 }
